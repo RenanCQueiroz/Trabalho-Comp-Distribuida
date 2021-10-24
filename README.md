@@ -6,6 +6,6 @@ O programa python do conteiner de aplicacao nao está funcionando.Atualmente ele
 
 Container de banco de dados = Work in Progress
 
-Contianer da interface = não começamos a fazer.
+Container da interface = não começamos a fazer.
 
 
