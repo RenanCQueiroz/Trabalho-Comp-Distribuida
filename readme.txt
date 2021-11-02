@@ -1,0 +1,21 @@
+Trabalho - Computação Distribuída
+
+Banco de dados:
+MongoDB
+
+
+API:
+Nodejs
+Hapijs
+Mongoose
+Nodemon
+
+
+Interface:
+Nodejs
+Expressjs
+Bootstrap
+
+docker run -p27017:27017 --rm --name api-db -d mongo
+docker run -p 49160:3000 -d aplicacao/api-node
+docker run -p 49161:3001 -d visual/interface-node
