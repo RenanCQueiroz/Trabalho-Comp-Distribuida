@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Trabalho Comp.Distribuída</title>
+</head>
+<body>
+    <div class="container">
+
+        <table class="table table-dark table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Aluno</th>
+                    <th>RGA</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <body>
+                <% alunos.forEach(function(aluno) { %>
+                <tr>
+                    <td><%= aluno.attributes.name %></td>
+                    <td><%= aluno.attributes.rga %></td>
+                    <td><a class="btn-excluir" href="http://localhost:3000<%= aluno.links.self %>">Excluir</a></td>
+                </tr>
+                <% })%>
+            </body>
+        </table>
+    </div>
+    <script>
+        const alunoList = document.querySelector('table');
+        alunoList.addEventListener('click', function(event) {
+            event.preventDefault();
+            const btnExcluir = event.target;
+
+            if (event.target.classList.contains('btn-excluir')){
+                const url = btnExcluir.href;
+                //console.log(url)
+
+                fetch(url, {
+                    method: 'DELETE'
+                }).then(function() {
+                    btnExcluir.parentNode.parentNode.remove();
+                })
+            }
+
+        })
+    </script>
+    
+    
+</body>
+</html>
